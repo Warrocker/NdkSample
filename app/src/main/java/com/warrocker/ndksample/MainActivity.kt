@@ -9,14 +9,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        textView1.text = "encodeString is \"" + encodeString("String to encode") + "\""
-        textView2.text = "number from .so is \"" + numberFromLibrary() + "\""
+        textView1.text = "number from .so is \"" + numberFromLibrary() + "\""
     }
-
-    /**
-     * string-utils
-     */
-    external fun encodeString(input: String): String
 
     /**
      * number-utils
@@ -25,10 +19,6 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         init {
-            /**
-             * Local library
-             */
-            System.loadLibrary("string-utils")
             /**
              * .so wrapper
              */
